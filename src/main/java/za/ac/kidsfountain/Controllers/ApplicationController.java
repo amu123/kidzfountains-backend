@@ -36,7 +36,7 @@ public class ApplicationController {
     public ResponseEntity setApplicationStatus(@RequestBody String json){
         try {
             JsonNode data = mapper.readTree(json);
-            boolean status = data.findValue("status").asBoolean();
+            String status = data.findValue("status").asText();
             Application application = service.saveApplicationStatus(status);
             return new ResponseEntity(application,HttpStatus.OK);
 
@@ -50,7 +50,7 @@ public class ApplicationController {
     public ResponseEntity setRegistrationStatus(@RequestBody String json){
         try {
             JsonNode data = mapper.readTree(json);
-            boolean status = data.findValue("status").asBoolean();
+            String status = data.findValue("status").asText();
             Application application = service.setRegistration(status);
             return new ResponseEntity(application,HttpStatus.OK);
 
