@@ -43,4 +43,12 @@ public class Application {
     public void setRegistrationStatus(String registrationStatus) {
         this.registrationStatus = registrationStatus;
     }
+
+    public String getApplicationStatus() {
+        return applicationStatus;
+    }
+
+    public String getRegistrationStatus() {
+        return registrationStatus;
+    }
 }

@@ -64,7 +64,9 @@ public class ApplicationController {
     public ResponseEntity getAppl()
     {
         try {
-            return new ResponseEntity(service.getApplication(1),HttpStatus.OK);
+
+            Application application = service.getApplication(1);
+            return new ResponseEntity(application,HttpStatus.OK);
 
         }
         catch (Exception e)
