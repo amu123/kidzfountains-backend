@@ -20,13 +20,13 @@ public class Events {
     private String description;
     private String date;
     private String postedDate;
-    private boolean isActive;
+    private String isActive;
 
-    public boolean isActive() {
+    public String isActive() {
         return isActive;
     }
 
-    public void setIsActive(boolean isActive) {
+    public void setIsActive(String isActive) {
         this.isActive = isActive;
     }
 
@@ -42,7 +42,7 @@ public class Events {
         this.title = title;
     }
 
-    public Events(String title, String description, String date, String postedDate,boolean isActive) {
+    public Events(String title, String description, String date, String postedDate,String isActive) {
         this.title = title;
         this.description = description;
         this.date = date;

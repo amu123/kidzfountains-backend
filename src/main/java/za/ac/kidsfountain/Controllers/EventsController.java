@@ -49,7 +49,7 @@ public class EventsController {
                                     data.findValue("description").asText(),
                                     data.findValue("date").asText(),
                                     data.findValue("postedDate").asText(),
-                                    data.findValue("isActive").asBoolean());
+                                    data.findValue("isActive").asText());
             Events e = service.create(event);
             return new ResponseEntity(e,HttpStatus.CREATED);
 
@@ -68,7 +68,7 @@ public class EventsController {
             {
                 ev.setDate(data.findValue("date").asText());
                 ev.setDescription(data.findValue("description").asText());
-                ev.setIsActive(data.findValue("isActive").asBoolean());
+                ev.setIsActive(data.findValue("isActive").asText());
                 ev.setTitle(data.findValue("title").asText());
                 ev.setPostedDate(data.findValue("postedDate").asText());
 
@@ -144,18 +144,18 @@ public class EventsController {
                         Date today = new Date();
                         Date date = dateFormat.parse(event.getDate());
                         if(date.before(dateFormat.parse(dateFormat.format(today)))){
-                            event.setIsActive(false);
+                            event.setIsActive("false");
                             event = service.updateEvent(event);
 
                         }
                         if (date.after(dateFormat.parse(dateFormat.format(today)))) {
-                            if (event.isActive()) {
+                            if (event.isActive().equalsIgnoreCase("true")) {
                                 listToBeReturned.add(event);
 
                             }
                         }
                         if(date.equals(dateFormat.parse(dateFormat.format(today)))){
-                            event.setIsActive(true);
+                            event.setIsActive("true");
                             event = service.updateEvent(event);
                             listToBeReturned.add(event);
                             System.out.println( " -----+++++++++ " + event.getDate() + "======" + today);
@@ -188,13 +188,13 @@ public class EventsController {
                     Date date = dateFormat.parse(event.getDate());
                     if(date.equals(dateFormat.parse(dateFormat.format(today))))
                     {
-                        event.setIsActive(true);
+                        event.setIsActive("true");
                         event =  service.updateEvent(event);
                         System.out.println( " -----" + event.getDate());
                     }
                     else
                     if (date.before(dateFormat.parse(dateFormat.format(today)))) {
-                        event.setIsActive(false);
+                        event.setIsActive("false");
                         event =  service.updateEvent(event);
                         System.out.println( " -----===== before " + event.getDate() + " +++++++++++" + today);
 
@@ -202,7 +202,7 @@ public class EventsController {
                     }
 
 
-                    if (!event.isActive()) {
+                    if (event.isActive().equalsIgnoreCase("false")) {
                         listToBeReturned.add(event);
                     }
 

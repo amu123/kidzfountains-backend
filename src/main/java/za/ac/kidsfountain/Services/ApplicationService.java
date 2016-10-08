@@ -17,7 +17,7 @@ public class ApplicationService {
     @Autowired
     ApplicationRepo repo;
 
-    public Application saveApplicationStatus(boolean status)
+    public Application saveApplicationStatus(String status)
     {
         long id = 1;
         Application app = repo.findOne(id);
@@ -52,7 +52,7 @@ public class ApplicationService {
         }
         return ls;
     }
-    public Application setRegistration(boolean status){
+    public Application setRegistration(String status){
         long id = 1;
         Application app = repo.findOne(id);
         if(app != null){

@@ -11,8 +11,8 @@ public class Application {
     @Id
 //    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private boolean applicationStatus;
-    private boolean registrationStatus;
+    private String applicationStatus;
+    private String registrationStatus;
     //*147#
 
     public Application() {
@@ -23,24 +23,24 @@ public class Application {
     }
 
 
-    public Application(boolean applicationStatus, boolean registrationStatus) {
+    public Application(String applicationStatus, String registrationStatus) {
         this.applicationStatus = applicationStatus;
         this.registrationStatus = registrationStatus;
     }
 
-    public boolean isApplicationStatus() {
+    public String isApplicationStatus() {
         return applicationStatus;
     }
 
-    public void setApplicationStatus(boolean applicationStatus) {
+    public void setApplicationStatus(String applicationStatus) {
         this.applicationStatus = applicationStatus;
     }
 
-    public boolean isRegistrationStatus() {
+    public String isRegistrationStatus() {
         return registrationStatus;
     }
 
-    public void setRegistrationStatus(boolean registrationStatus) {
+    public void setRegistrationStatus(String registrationStatus) {
         this.registrationStatus = registrationStatus;
     }
 }
