@@ -1,0 +1,43 @@
+# Local DataSource settings
+---
+spring:
+    profiles:
+        active: dev #/ dev - production
+---
+spring:
+    profiles: dev
+    datasource:
+        # DataSource settings: set here your own configurations for the database
+        # connection. In this example we have "netgloo_blog" as database name and
+        # "root" as username and password.
+        username: root
+        password: infoware
+        url: jdbc:mysql://localhost:3306/Kidz_Fountain
+
+        # Keep the connection alive if idle for a long time (needed in production)
+        testWhileIdle: true
+        validationQuery: SELECT 1
+
+    jpa:
+        # Show or not log for each sql query
+        show-sql: true
+        hibernate:
+            # Hibernate ddl auto (create, create-drop, update)
+            ddl-auto: update
+            # Naming strategy
+            naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+
+        properties:
+            hibernate:
+                # The SQL dialect makes Hibernate generate better SQL for the chosen database
+                dialect: org.hibernate.dialect.MySQL5Dialect
+
+            jadira:
+              usertype:
+                  # Enable JPA to use Joda Time library
+                  autoRegisterUserTypes: true
+                  # Enable the currency for the JPA to create the table
+                  currencyCode: ZAR
+    server:
+        port: 3005
+
