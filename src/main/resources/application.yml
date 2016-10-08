@@ -14,10 +14,16 @@ spring:
         #password: infoware
         #url: jdbc:mysql://localhost:3306/Kidz_Fountain
 
-        username: lllyiuohxchpog
-        password: Cdl7iNIHfNhwlZxxnnv2YitaLP
+        #username: lllyiuohxchpog
+        #password: Cdl7iNIHfNhwlZxxnnv2YitaLP
+        #port: 5432
+        #url: jdbc:postgresql://ec2-54-83-27-147.compute-1.amazonaws.com/dcbec2kou8btlh
+        #driverClassName: org.postgresql.Driver
+        #driverClassName: org.postgresql.Driver
+
+        username: tlharihani
         port: 5432
-        url: jdbc:postgresql://ec2-54-83-27-147.compute-1.amazonaws.com/dcbec2kou8btlh
+        url: jdbc:postgresql://localhost:5432/Kidz_Fountain
         #driverClassName: org.postgresql.Driver
         driverClassName: org.postgresql.Driver
 

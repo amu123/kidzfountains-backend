@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import za.ac.kidsfountain.Entity.Application;
 import za.ac.kidsfountain.Services.ApplicationService;
 
-import java.util.List;
-
 /**
  * Created by kidsfountain on 9/15/16.
  */
@@ -67,8 +65,8 @@ public class ApplicationController {
     {
         try {
 
-            List<Application> application = service.getAll();
-            System.out.println("--------- Application " + mapper.writeValueAsString(application));
+            Application application = service.getApplication(1L);
+            System.out.println("--------- Application " + application);
             return new ResponseEntity(application,HttpStatus.OK);
 
         }
