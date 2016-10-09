@@ -10,7 +10,9 @@ import javax.persistence.*;
 public class Admin {
     @Id
 //    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="user_id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_seq_gen")
+    @SequenceGenerator(name = "user_id", sequenceName = "user_id")
+//    @Column(name="user_id")
     private long id;
 
     private String name;
