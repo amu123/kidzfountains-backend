@@ -9,10 +9,10 @@ import javax.persistence.*;
 @Table(name = "application")
 public class Application {
     @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String applicationStatus;
-    private String registrationStatus;
+    private boolean applicationStatus;
+    private boolean registrationStatus;
     //*147#
 
     public Application() {
@@ -23,32 +23,32 @@ public class Application {
     }
 
 
-    public Application(String applicationStatus, String registrationStatus) {
+    public Application(boolean applicationStatus, boolean registrationStatus) {
         this.applicationStatus = applicationStatus;
         this.registrationStatus = registrationStatus;
     }
 
-    public String isApplicationStatus() {
+    public boolean isApplicationStatus() {
         return applicationStatus;
     }
 
-    public void setApplicationStatus(String applicationStatus) {
+    public void setApplicationStatus(boolean applicationStatus) {
         this.applicationStatus = applicationStatus;
     }
 
-    public String isRegistrationStatus() {
+    public boolean isRegistrationStatus() {
         return registrationStatus;
     }
 
-    public void setRegistrationStatus(String registrationStatus) {
+    public void setRegistrationStatus(boolean registrationStatus) {
         this.registrationStatus = registrationStatus;
     }
 
-    public String getApplicationStatus() {
+    public boolean getApplicationStatus() {
         return applicationStatus;
     }
 
-    public String getRegistrationStatus() {
+    public boolean getRegistrationStatus() {
         return registrationStatus;
     }
 }

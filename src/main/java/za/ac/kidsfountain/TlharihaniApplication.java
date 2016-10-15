@@ -35,7 +35,7 @@ public class TlharihaniApplication {
 			List<Application> apps = app.getAll();
 			if(apps.isEmpty())
 			{
-				app.createApplication(new Application("false","false"));
+				app.createApplication(new Application(false,false));
 			}
 
 		};

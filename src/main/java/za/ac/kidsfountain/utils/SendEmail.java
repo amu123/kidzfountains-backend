@@ -17,9 +17,9 @@ public class SendEmail {
 
             String to = userEmail;
 
-            String from = "dzunisanig@gmail.com";
+            String from = "tlharihani50@gmail.com";
             final String username = from;
-            final String password = "Vukahle001";
+            final String password = "212340057";
 
             String host = "smtp.gmail.com";
 
