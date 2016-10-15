@@ -200,7 +200,7 @@ import javax.persistence.*;
 @Table(name="Users")
 public class User {
     @Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="user_id")
     private long id;
 
@@ -217,37 +217,26 @@ public class User {
     private String studentNumber;
     private String password;
 
-    private String computerLessons,swimmingLessons,soccerLessons,dacingLessons;
+    private boolean computerLessons,swimmingLessons,soccerLessons,dacingLessons;
 
-    public String isComputerLessons() {
+    public boolean isComputerLessons() {
         return computerLessons;
     }
 
-    public void setComputerLessons(String computerLessons) {
+    public void setComputerLessons(boolean computerLessons) {
         this.computerLessons = computerLessons;
     }
-
-    public String isSwimmingLessons() {
-        return swimmingLessons;
-    }
-
-    public void setSwimmingLessons(String swimmingLessons) {
+    public void setSwimmingLessons(boolean swimmingLessons) {
         this.swimmingLessons = swimmingLessons;
     }
 
-    public String isSoccerLessons() {
-        return soccerLessons;
-    }
 
-    public void setSoccerLessons(String soccerLessons) {
+    public void setSoccerLessons(boolean soccerLessons) {
         this.soccerLessons = soccerLessons;
     }
 
-    public String isDacingLessons() {
-        return dacingLessons;
-    }
 
-    public void setDacingLessons(String dacingLessons) {
+    public void setDacingLessons(boolean dacingLessons) {
         this.dacingLessons = dacingLessons;
     }
 
@@ -301,39 +290,39 @@ public class User {
         this.email = email;
     }
 
-    public String getComputerLessons() {
+    public boolean getComputerLessons() {
         return computerLessons;
     }
 
-    public String getSwimmingLessons() {
+    public boolean getSwimmingLessons() {
         return swimmingLessons;
     }
 
-    public String getSoccerLessons() {
+    public boolean getSoccerLessons() {
         return soccerLessons;
     }
 
-    public String getDacingLessons() {
+    public boolean getDacingLessons() {
         return dacingLessons;
     }
-//    public User(String name, String surname, String idNumber, String parentName, String parentSurname, String parentIdNumber, String contact, String address, String email, String applicationStatus, String studentNumber, String password, String computerLessons, String swimmingLessons, String soccerLessons, String dacingLessons) {
-//        this.name = name;
-//        this.surname = surname;
-//        this.idNumber = idNumber;
-//        this.parentName = parentName;
-//        this.parentSurname = parentSurname;
-//        this.parentIdNumber = parentIdNumber;
-//        this.contact = contact;
-//        this.address = address;
-//        this.email = email;
-//        this.applicationStatus = applicationStatus;
-//        this.studentNumber = studentNumber;
-//        this.password = password;
-//        this.computerLessons = computerLessons;
-//        this.swimmingLessons = swimmingLessons;
-//        this.soccerLessons = soccerLessons;
-//        this.dacingLessons = dacingLessons;
-//    }
+    public User(String name, String surname, String idNumber, String parentName, String parentSurname, String parentIdNumber, String contact, String address, String email, String applicationStatus, String studentNumber, String password, boolean computerLessons, boolean swimmingLessons, boolean soccerLessons, boolean dacingLessons) {
+        this.name = name;
+        this.surname = surname;
+        this.idNumber = idNumber;
+        this.parentName = parentName;
+        this.parentSurname = parentSurname;
+        this.parentIdNumber = parentIdNumber;
+        this.contact = contact;
+        this.address = address;
+        this.email = email;
+        this.applicationStatus = applicationStatus;
+        this.studentNumber = studentNumber;
+        this.password = password;
+        this.computerLessons = computerLessons;
+        this.swimmingLessons = swimmingLessons;
+        this.soccerLessons = soccerLessons;
+        this.dacingLessons = dacingLessons;
+    }
 
     @Deprecated
     public long getId() {

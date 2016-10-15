@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "events")
 public class Events {
     @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
+   @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     public long getId() {
@@ -20,13 +20,13 @@ public class Events {
     private String description;
     private String date;
     private String postedDate;
-    private String isActive;
+    private boolean isActive;
 
-    public String isActive() {
+    public boolean isActive() {
         return isActive;
     }
 
-    public void setIsActive(String isActive) {
+    public void setIsActive(boolean isActive) {
         this.isActive = isActive;
     }
 
@@ -42,7 +42,7 @@ public class Events {
         this.title = title;
     }
 
-    public Events(String title, String description, String date, String postedDate,String isActive) {
+    public Events(String title, String description, String date, String postedDate,boolean isActive) {
         this.title = title;
         this.description = description;
         this.date = date;

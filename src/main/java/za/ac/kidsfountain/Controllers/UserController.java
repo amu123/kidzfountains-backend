@@ -615,27 +615,27 @@ public class UserController {
                     data.findValue("contact").asText(),
                     data.findValue("parentIdNumber").asText(),
                     data.findValue("email").asText());
-            String computerLessons = "false";
-            String swimmingLessons = "false";
-            String soccerLessons = "false";
-            String dancingLessons = "false";
+            boolean computerLessons = false;
+            boolean swimmingLessons = false;
+            boolean soccerLessons = false;
+            boolean dancingLessons = false;
             if(data.has("dacingLessons"))
             {
-                dancingLessons = String.valueOf(data.findValue("dacingLessons").asBoolean());
+                dancingLessons = data.findValue("dacingLessons").asBoolean();
 
             }
             if(data.has("computerLessons"))
             {
-                computerLessons = String.valueOf(data.findValue("computerLessons").asBoolean());
+                computerLessons = data.findValue("computerLessons").asBoolean();
             }
             if(data.has("swimmingLessons"))
             {
-                swimmingLessons = String.valueOf(data.findValue("swimmingLessons").asBoolean());
+                swimmingLessons = data.findValue("swimmingLessons").asBoolean();
 
             }
             if(data.has("soccerLessons"))
             {
-                soccerLessons = String.valueOf(data.findValue("soccerLessons").asBoolean());
+                soccerLessons = data.findValue("soccerLessons").asBoolean();
             }
             user.setComputerLessons(computerLessons);
             user.setDacingLessons(dancingLessons);
@@ -995,27 +995,27 @@ public class UserController {
                 user.setName(data.findValue("name").asText());
                 user.setSurname( data.findValue("surname").asText());
                 user.setAddress(data.findValue("address").asText());
-                String computerLessons = "false";
-                String swimmingLessons = "false";
-                String soccerLessons = "false";
-                String dancingLessons = "false";
+                boolean computerLessons = false;
+                boolean swimmingLessons = false;
+                boolean soccerLessons = false;
+                boolean dancingLessons = false;
                 if(data.has("dacingLessons"))
                 {
-                    dancingLessons = data.findValue("dacingLessons").asText();
+                    dancingLessons = data.findValue("dacingLessons").asBoolean();
 
                 }
                 if(data.has("computerLessons"))
                 {
-                    computerLessons = data.findValue("computerLessons").asText();
+                    computerLessons = data.findValue("computerLessons").asBoolean();
                 }
                 if(data.has("swimmingLessons"))
                 {
-                    swimmingLessons = data.findValue("swimmingLessons").asText();
+                    swimmingLessons = data.findValue("swimmingLessons").asBoolean();
 
                 }
                 if(data.has("soccerLessons"))
                 {
-                    soccerLessons = data.findValue("soccerLessons").asText();
+                    soccerLessons = data.findValue("soccerLessons").asBoolean();
                 }
                 user.setComputerLessons(computerLessons);
                 user.setDacingLessons(dancingLessons);

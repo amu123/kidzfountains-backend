@@ -80,7 +80,7 @@ public class AdminController {
                 if(checkAdminById ==  null)
                 {
                     SendEmail sendEmail = new SendEmail();
-                    sendEmail.sendEmail(admin.getEmail(),"Registration","Hi " + admin.getName() + "\n\nYou are successfully registered to the kidz fountain system as admin\n\n\\nYour staff number is:"+ admin.getStaffNumber() +
+                    sendEmail.sendEmail(admin.getEmail(),"Registration","Hi " + admin.getName() + "\n\nYou are successfully registered to the kidz fountain system as admin\n\n\nYour staff number is:"+ admin.getStaffNumber() +
                                                 " use it to sign in\n\n\n\n\nWarmest regards\nKids fountain");
                     Admin a = service.createUser(admin);
                     return new ResponseEntity(a, HttpStatus.CREATED);

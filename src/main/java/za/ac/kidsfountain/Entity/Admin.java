@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name="Admin")
 public class Admin {
     @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
 //    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_seq_gen")
 //    @SequenceGenerator(name = "user_id", sequenceName = "user_id")
     @Column(name="user_id")
