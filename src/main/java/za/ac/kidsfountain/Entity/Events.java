@@ -23,7 +23,7 @@ public class Events {
     private boolean isActive;
 
     public boolean isActive() {
-        return isActive;
+        return this.isActive;
     }
 
     public void setIsActive(boolean isActive) {
